@@ -3,6 +3,15 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# ignore ALL .idea files
+*.idea
+
+#ignore target folder
+*target
+
+#ignore build
+*build
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
