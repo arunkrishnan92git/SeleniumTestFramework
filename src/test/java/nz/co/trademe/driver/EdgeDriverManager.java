@@ -3,8 +3,7 @@ package nz.co.trademe.driver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
-public class EdgeDriverManager extends DriverManager{
-
+public class EdgeDriverManager extends DriverManager {
 
     void createDriver() {
 
@@ -12,7 +11,6 @@ public class EdgeDriverManager extends DriverManager{
                 + "/src/test/resources/msedgedriver.exe");
         EdgeOptions options = new EdgeOptions();
         driver = new EdgeDriver(options);
-
 
     }
 }

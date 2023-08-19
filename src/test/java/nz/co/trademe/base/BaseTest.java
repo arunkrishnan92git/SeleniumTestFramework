@@ -13,36 +13,39 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
     public WebDriver driver;
-    DriverManager driverManager;
     public LandingPage landingPage;
     public MotorsTab motorsTab;
     public CarsTab carSearchTab;
+    DriverManager driverManager;
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         createLocalDriver(TestConfig.getEnvProperty("browser"));
         driver.manage().window().maximize();
         driver.navigate().to(TestConfig.getEnvProperty("url"));
     }
+
     public WebDriver getDriver() {
         return driver;
     }
-    public void createLocalDriver(String browserName){
+
+    //Used to get the browser type and create a local driver used for testing.
+    public void createLocalDriver(String browserName) {
         if (browserName.equalsIgnoreCase("Chrome")) {
             driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
             driver = driverManager.getDriver();
-        }
-        else if( browserName.equalsIgnoreCase("Firefox")){
+        } else if (browserName.equalsIgnoreCase("Firefox")) {
             driverManager = DriverManagerFactory.getManager(DriverType.FIREFOX);
             driver = driverManager.getDriver();
-        }
-        else if( browserName.equalsIgnoreCase("Edge")){
+        } else if (browserName.equalsIgnoreCase("Edge")) {
             driverManager = DriverManagerFactory.getManager(DriverType.EDGE);
             driver = driverManager.getDriver();
         }
     }
+
+
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driverManager.quitDriver();
     }
 

@@ -36,11 +36,10 @@ public class TestConfig {
     // To get the value of specific property
     public static String getEnvProperty(final String key) {
         if (envprops == null) {
-             loadTestProperties();
+            loadTestProperties();
         }
         return envprops.getProperty(key);
     }
-
 
 
     public static String getEnvironment() {

@@ -3,7 +3,7 @@ package nz.co.trademe.driver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class FirefoxDriverManager extends DriverManager{
+public class FirefoxDriverManager extends DriverManager {
 
     void createDriver() {
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")

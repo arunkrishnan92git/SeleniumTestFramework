@@ -18,21 +18,18 @@ public class TestListener extends BaseTest implements ITestListener {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
 
-    //Screenshot taken in png format for allure
-    public byte[] saveScreenshotPNG(WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
-
-    //Text attachments for Allure
     @Attachment(value = "{0}", type = "text/plain")
     public static String saveTextLog(String message) {
         return message;
     }
 
-    //HTML attachments for Allure
     @Attachment(value = "{0}", type = "text/html")
     public static String attachHtml(String html) {
         return html;
+    }
+
+    public byte[] saveScreenshotPNG(WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
     @Override
@@ -64,9 +61,5 @@ public class TestListener extends BaseTest implements ITestListener {
 
     }
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-        // Log.info("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
-    }
 }
 

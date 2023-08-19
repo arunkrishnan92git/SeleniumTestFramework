@@ -6,8 +6,8 @@
     </listeners>
     <test name="Trademe Test">
         <classes>
-           <!-- <class name="nz.co.trademe.LandingPageTest"></class> -->
-            <!-- <class name="nz.co.trademe.CarSearchTest"></class> -->
+            <class name="nz.co.trademe.LandingPageTest"></class>
+            <class name="nz.co.trademe.CarSearchTest"></class>
             <class name="nz.co.trademe.JobSearchTest"></class>
         </classes>
     </test>
